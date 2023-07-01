@@ -11,48 +11,52 @@
 <body>
     <form action="a.php" method="GET" class="form-control col-lg-5 col-12">
         <h1 class="bg-primary card-header text-light text-center text-uppercase">sở thích của bạn</h1>
-        <label>Họ Và Tên: </label>
-        <input class="form-control" type="text" name="your_name">
-        <label>Email: </label>
-        <input class="form-control" type="email" name="email">
-        <label>So thich:</label>
-        <div class="form-inline">
-            <div class="form-check mx-3">
-                <input class="form-check-input" name="hobby" type="checkbox" id="checkbox1">
-                <label class="form-check-label" for="checkbox1">The Thao</label>
-            </div>
-            <div class="form-check mx-3">
-                <input class="form-check-input" name="hobby" type="checkbox" id="checkbox2">
-                <label class="form-check-label" for="checkbox2">Am Nhac</label>
-            </div>
-            <div class="form-check mx-3">
-                <input class="form-check-input" name="hobby" type="checkbox" id="checkbox3">
-                <label class="form-check-label" for="checkbox3">Doc Sach</label>
+        <div class="container mt-1">
+            <div class="row">
+                <label class="col-3 mt-1">Your Name:</label>
+                <input type="text" class="col-9 form-control" name=""> </div>
+        </div>
+        <div class="container mt-1">
+            <div class="row">
+                <label class="col-3 mt-1">Email</label>
+                <input type="email" class="form-control col-9" name="">
             </div>
         </div>
-        <div class="form-inline">
-            <div class="form-check mx-3">
-                <input class="form-check-input" name="hobby" type="checkbox" id="checkbox4">
-                <label class="form-check-label" for="checkbox4">Luot Web</label>
+        <div class="container mt-1">
+            <div class="row">
+                <div class="col-3">
+                    <label>So thich:</label>
+                </div>
+                <div class="col-9">
+                    <div class="row ml-1">
+                        <div class="col-4">
+                            <input class="form-check-input" type="checkbox" name=""><label>Am Nhac</label>
+                        </div>
+                        <div class="col-4">
+                            <input class="form-check-input" type="checkbox" name=""><label>The Thao</label>
+                        </div>
+                        <div class="col-4">
+                            <input class="form-check-input" type="checkbox" name=""><label>Am Nhac</label>
+                        </div>
+                    </div>
+                    <div class="row ml-1">
+                        <div class="col-4">
+                            <input class="form-check-input" type="checkbox" name=""><label>Am Nhac</label>
+                        </div>
+                        <div class="col-4">
+                            <input class="form-check-input" type="checkbox" name=""><label>The Thao</label>
+                        </div>
+                        <div class="col-4">
+                            <input class="form-check-input" type="checkbox" name=""><label>Am Nhac</label>
+                        </div>
+                    </div>
+                    <div class="row ml-1">
+                        <div class="col-4">
+                            <input type="checkbox" class="form-check-input" name=""><label>Cuoi Cung</label>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="form-check mx-3">
-                <input class="form-check-input" name="hobby" type="checkbox" id="checkbox5">
-                <label class="form-check-label" for="checkbox5">Choi Game</label>
-            </div>
-            <div class="form-check mx-3">
-                <input class="form-check-input" name="hobby" type="checkbox" id="checkbox6">
-                <label class="form-check-label" for="checkbox6">Dien Anh</label>
-            </div>
-        </div>
-        <div class="form-inline">
-            <div class="form-check mx-3">
-                <input class="form-check-input" name="hobby" type="checkbox">
-                <label class="form-check-label">Du Lich</label>
-            </div>
-        </div>
-        <div class="text-center">
-            <button class="btn btn-success">Gui thong tin</button>
-            <button class="btn btn-primary">Nhap lai</button>
         </div>
     </form>
     <br>
@@ -97,35 +101,35 @@
                 </div>
             </div>
             <div class="row mt-1">
-            	<div class="col-6">
-            		<label class="mt-1">Lop:</label>
-            	</div>
-            	<div class="col-6">
-            		<select class="custom-select">
-            			<option>
-            				----chon lop----
-            			</option>
-            			<option>
-            				Lop 1
-            			</option>
-            		</select>
-            	</div>
+                <div class="col-6">
+                    <label class="mt-1">Lop:</label>
+                </div>
+                <div class="col-6">
+                    <select class="custom-select">
+                        <option>
+                            ----chon lop----
+                        </option>
+                        <option>
+                            Lop 1
+                        </option>
+                    </select>
+                </div>
             </div>
             <div class="row">
-            	<div class="col-6">
-            		<label class="mt-2">Email:</label>
-            	</div>
-            	<div class="col-6">
-            		<input class="form-control mt-1" type="email" name="">
-            	</div>
+                <div class="col-6">
+                    <label class="mt-2">Email:</label>
+                </div>
+                <div class="col-6">
+                    <input class="form-control mt-1" type="email" name="">
+                </div>
             </div>
             <div class="row">
-            	<div class="col-6">
-            		<label class="mt-2">Dien thoai:</label>
-            	</div>
-            	<div class="col-6">
-            		<input class="form-control mt-1" type="text" name="">
-            	</div>
+                <div class="col-6">
+                    <label class="mt-2">Dien thoai:</label>
+                </div>
+                <div class="col-6">
+                    <input class="form-control mt-1" type="text" name="">
+                </div>
             </div>
         </div>
     </form>

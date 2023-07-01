@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+</head>
+<body>
+	<script type="text/javascript">
+		let tien_vay = parseInt(prompt("Nhap so tien vay"));
+		let lai_suat = Number(prompt("Nhap lai suat")); 
+		let nam = parseInt(prompt("Nhap so nam cho  vay"));
+
+		let tien_lai = tien_vay * lai_suat / 100;
+		let tong_tien = tien_vay + nam * tien_lai;
+
+		document.write("So tien phai tra sau " + nam +" nam la: " + tong_tien);
+	</script>
+</body>
+</html>
