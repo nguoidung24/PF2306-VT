@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <meta charset='utf-8'>
+        <meta name='viewport' content='width=device-width, initial-scale=1'>
+        <link href='https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css' rel='stylesheet'>
+        <title>Page Title</title>
+    </head>
+
+    <body class='bg-dark text-light'>
+        <div class="container">
+            <div class="row">
+                <label>Can nang:</label>
+                <div class="col-12 mt-1">
+                    <input id="cn" name="ip" class="form-control" type="text">
+                </div>
+                <label>Chieu cao:</label>
+                <div class="col-12 mt-1">
+                    <input id="cc" name="ip" class="form-control" type="text">
+                </div>
+            </div>
+            <div class="row mt-1">
+                <div class="col-12">
+                    <button id="kiemtra" class="btn w-100 btn-success">Kiem Tra</button>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <p id="result"></p>
+                </div>
+            </div>
+        </div>
+    </body>
+    <script type="text/javascript">
+    let ip = document.getElementsByName('ip');
+
+    function bmi(cn, cc) {
+        return cn / cc ** 2
+    }
+    document.getElementById('kiemtra').addEventListener('click', () => {
+        document.getElementById('result').innerText = kiemTra(bmi(ip[0].value, ip[1].value));
+    });
+
+    function kiemTra(bmi) {
+        if (bmi < 16) {
+            return bmi + " Gay do III";
+        } else if (bmi < 17) {
+            return bmi + " Gay do II";
+        } else if (bmi < 18.5) {
+            return bmi + " Gay do I";
+        } else if (bmi < 25) {
+            return bmi + " Binh thuong";
+        } else if (bmi < 30) {
+            return bmi + " Thua can";
+        } else if (bmi < 35) {
+            return bmi + " Beo phi muc do I";
+        } else if (bmi < 40) {
+            return bmi + " Beo phi muc do II";
+        } else {
+            return bmi + " Beo phi muc do III";
+        }
+    }
+    </script>
+
+</html>

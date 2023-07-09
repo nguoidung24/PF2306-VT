@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <meta charset='utf-8'>
+        <meta name='viewport' content='width=device-width, initial-scale=1'>
+        <link href='https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css' rel='stylesheet'>
+        <title>Page Title</title>
+    </head>
+
+    <body class='bg-dark text-light'>
+        <div class="container">
+            <div class="row mt-2">
+                <div class="col-3">
+                    <label>Tien:</label>
+                </div>
+                <div class="col-3">
+                    <label>From:</label>
+                </div>
+                <div class="col-3">
+                    <label>To:</label>
+                </div>
+            </div>
+            <div class="row mt-2">
+                <div class="col-3">
+                    <input class="w-100 form-control" type="text" id="ip">
+                </div>
+                <div class="col-3">
+                    <select class="form-select" name="quocgia" id="qg1">
+                        <option value="vn">Viet Nam</option>
+                        <option value="m">My</option>
+                    </select>
+                </div>
+                <div class="col-3">
+                    <select class="form-select" name="quocgia" id="qg2">
+                        <option value="vn">Viet Nam</option>
+                        <option value="m">My</option>
+                    </select>
+                </div>
+                <div class="col-3">
+                    <input class="btn w-100 btn-success" value="Convert" type="button" id="btnKiemTra">
+                </div>
+            </div>
+            <div class="row mt-2">
+                <div class="col">
+                	<p id="result"></p>
+                </div>
+            </div>
+        </div>
+    </body>
+    <!-- m = 23 vn -->
+    <!-- tq = 7 vn  -->
+    <script type="text/javascript">
+    let quocgia = document.getElementsByName('quocgia');
+    let ip = document.getElementById('ip');
+    function kiemTra(q1, q2, ipt) {
+        if (q1 != q2) {
+            if (q1 == "vn" && q2 == "m") {
+                return ipt / 23000;
+            }
+            return ipt * 23000;
+        }
+        return ipt;
+    }
+ 	document.getElementById('btnKiemTra').addEventListener('click',()=>{
+ 		document.getElementById('result').innerText = kiemTra(quocgia[0].value.toString(),quocgia[1].value.toString(),ip.value);
+ 	});
+    </script>
+
+</html>
