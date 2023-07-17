@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <meta charset='utf-8'>
+        <meta name='viewport' content='width=device-width, initial-scale=1'>
+        <link href='https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css' rel='stylesheet'>
+        <title>Page Title</title>
+    </head>
+
+    <body class='bg-dark text-light'>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col"></div>
+                <button id="btnChoi" class="btn btn-success w-100">Chơi</button>
+            </div>
+        </div>
+    </body>
+    <script type="text/javascript">
+    let btnChoi = document.getElementById('btnChoi');
+    btnChoi.addEventListener("click", () => {
+        let index = 2;
+        let maxNum = Number(prompt("Nhap mot so"));
+        let ranNum = Math.floor(Math.random() * maxNum) + 1;
+        let selecNum = Number(prompt('Chon mot so'));
+        while (selecNum != ranNum && index <= 3) {
+            alert("Chon sai !!, chon tiep lan " + index);
+            index++;
+            selecNum = Number(prompt('Chon mot so'));
+        }
+        console.log(selecNum,ranNum);
+
+        let result = (index <= 3) ? "Ban da chon dung !" : "Ban da het luot chon !";
+        alert(result);
+    });
+    </script>
+
+</html>

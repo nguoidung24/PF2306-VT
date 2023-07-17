@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <meta charset='utf-8'>
+        <meta name='viewport' content='width=device-width, initial-scale=1'>
+        <link href='https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css' rel='stylesheet'>
+        <title>Page Title</title>
+    </head>
+
+    <body class='bg-dark text-light'>
+        <div class="container">
+            <div class="row mt-1">
+                <button class="btn w-100 btn-success" id="btnXem">Bốc bài</button>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <p class="text-danger h1 text-center" id="result"></p>
+                </div>
+            </div>
+        </div>
+    </body>
+    <script type="text/javascript">
+    let thuHang = ['Ace', '2', '3', '4', '5', '6', '7', '8', '9', '10', 'Jack', 'Queen', 'King'];
+    let chat = ['Clubs', 'Diamonds', 'Hearts', 'Sapades'];
+    let result = document.getElementById('result');
+    document.getElementById('btnXem').addEventListener('click', function() {
+        let soThuHang = Math.floor(Math.random() * thuHang.length);
+        let cacChat = Math.floor(Math.random() * chat.length);
+       result.innerText = `${thuHang[soThuHang]}  ${chat[cacChat]}`;
+    });
+    </script>
+
+</html>

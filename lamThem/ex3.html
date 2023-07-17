@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <meta charset='utf-8'>
+        <meta name='viewport' content='width=device-width, initial-scale=1'>
+        <link href='https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css' rel='stylesheet'>
+        <title>Page Title</title>
+    </head>
+
+    <body class='bg-dark text-light'>
+        <div class="container">
+            <div class="row mt-1">
+                <div class="col">
+                    <div class="form-floating">
+                        <input placeholder="Year" class="form-control" id="ipYear" value="2023" type="number">
+                        <label>Enter a Year</label>
+                    </div>
+                </div>
+            </div>
+            <div class="row mt-1">
+                <div class="col">
+                    <div class="form-floating">
+                        <input placeholder="Month" class="form-control " value="7" id="ipMonth" type="number">
+                        <label>Enter a Month</label>
+                    </div>
+                </div>
+            </div>
+            <div class="row mt-1">
+                <div class="col">
+                    <div class="form-floating">
+                        <input placeholder="Day" class="form-control " value="12" id="ipDay" type="number">
+                        <label>Enter a Day</label>
+                    </div>
+                </div>
+            </div>
+            <div class="row mt-1">
+                <div class="col">
+                    <button class="btn w-100 btn-success" id="btnXem">Xem</button>
+                </div>
+            </div>
+            <div class="row mt-1">
+                <div class="col">
+                    <p id="result" class="text-center">
+                    </p>
+                </div>
+            </div>
+        </div>
+    </body>
+    <script type="text/javascript">
+    let h = ['Saturday', 'Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'];
+    let ipD = document.getElementById('ipDay');
+    let ipM = document.getElementById('ipMonth');
+    let ipY = document.getElementById('ipYear');
+    let btnXem = document.getElementById('btnXem');
+    btnXem.addEventListener('click', function() {
+        let q = Number(ipD.value);
+        let m = Number(ipM.value);
+        let k = Number(ipY.value) % 100;
+        let j = (k) ? Math.floor(Number(ipY.value) / 100) + 1 : Math.floor(Number(ipY.value) / 100);
+        if (m < 3) {
+            m += 12;
+            k--;
+        }
+        let hh = Math.round((q + ((26 * (m + 1)) / 10) + k + (k / 4) + (j / 4) + 5 * j)%7);
+        console.log(`${q} ${m} ${j} ${k}`)
+        console.log(hh);
+
+    });
+    </script>
+
+</html>

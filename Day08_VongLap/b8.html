@@ -12,10 +12,10 @@
         <div class="container">
             <div class="row mt-2">
                 <div class="col">
-                    <input id="ipNam" class="form-control" type="number">
+                    <input type="number" class="bg-dark text-light form-control" id="ipNum">
                 </div>
                 <div class="col">
-                    <input id="btnKiemTra" class="btn btn-success" type="button" value="Kiem Tra">
+                    <input class="btn btn-success" type="button" value="OK" id="btnOK">
                 </div>
             </div>
             <div class="row">
@@ -26,14 +26,16 @@
         </div>
     </body>
     <script type="text/javascript">
-    let y = document.getElementById('ipNam');
-    let can = ["Canh", "Tân", "Nhâm", "Quý", "Giáp", "Ất", "Bính", "Đinh", "Mậu", "Kỷ"];
-    let chi = ["Thân", "Dậu", "Tuất", "Hợi", "Tý", "Sửu", "Dần", "Mão", "Thìn", "Tỵ", "Ngọ", "Mùi"];
-    document.getElementById('btnKiemTra').addEventListener('click', () => {
-        let ca = Number(y.value) % 10;
-        let ch = Number(y.value) % 12;
-        document.getElementById('result').innerText =
-            can[ca] + " " + chi[ch]
+    let ipNum = document.getElementById('ipNum');
+    let result = document.getElementById('result');
+    let btnOK = document.getElementById('btnOK');
+    btnOK.addEventListener('click', () => {
+        let kq = '';
+        let arr = ipNum.value.split("");
+        for (var i = (arr.length - 1); i >= 0; i--) {
+            kq += arr[i];
+        }
+        result.innerText = kq;
     });
     </script>
 

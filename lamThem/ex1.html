@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <meta charset='utf-8'>
+        <meta name='viewport' content='width=device-width, initial-scale=1'>
+        <link href='https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css' rel='stylesheet'>
+        <title>Page Title</title>
+    </head>
+
+    <body class='bg-dark text-light'>
+        <div class="container">
+            <div class="row mt-1">
+                <div class="col">
+                    <input id="btnXem" class="btn btn-success" value="Xem Tháng" type="button">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <p id="result"></p>
+                </div>
+            </div>
+        </div>
+    </body>
+    <script type="text/javascript">
+    let btnXem = document.getElementById('btnXem');
+    let result = document.getElementById('result');
+    let monArr = ["Jan","Feb","Mar","Aqr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
+    btnXem.addEventListener('click', function() {
+        let month = Math.floor(Math.random() * 12);
+        result.innerText = monArr[month];
+
+    });
+    </script>
+
+</html>
