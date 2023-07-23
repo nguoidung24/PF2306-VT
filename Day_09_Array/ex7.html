@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <meta charset='utf-8'>
+        <meta name='viewport' content='width=device-width, initial-scale=1'>
+        <link href='https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css' rel='stylesheet'>
+        <title>Page Title</title>
+    </head>
+    <!------------------------ Phan 1 ----->
+    <!------------------------ Phan 2 ----->
+        <div class="container">
+        <div class="row mt-1">
+            <div class="col">
+                <div class="form-floating">
+                    <input type="text" class="form-control" value="025468" placeholder=" " id="inputStr">
+                    <label>Nhập một số:</label>
+                </div>
+            </div>
+            <div class="col">
+                <button id="show" class="btn btn-success h-100">Show</button>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <p id="result"></p>
+            </div>
+        </div>
+    </div>
+    <!------------------------ Phan 3 ----->
+<!--     <div class="container">
+        <div class="row mt-1">
+            <div class="col">
+                <div class="form-floating">
+                    <input type="text" class="form-control" value="The Quick Brown Fox" placeholder=" " id="inputStr">
+                    <label>Nhập một chuỗi:</label>
+                </div>
+            </div>
+            <div class="col">
+                <button id="show" class="btn btn-success h-100">Show</button>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <p id="result"></p>
+            </div>
+        </div>
+    </div>
+ -->
+    <body class='bg-dark text-light'>
+    </body>
+    <script type="text/javascript">
+    //---------------------------------------Phần 1---:
+    // let colors = ['Green', 'Blue', 'Red', 'Black'];
+    // console.log(colors.toString());
+    //---------------------------------------Phần 2----:
+    let inputStr = document.getElementById('inputStr');
+    let show = document.getElementById('show');
+    let result = document.getElementById('result');
+    show.addEventListener('click', () => {
+        let str = inputStr.value;
+        let newStr = str[0];
+        for (let i = 1; i < str.length; i++) {
+            let j = Number(str[i]);
+            let k = Number(str[i - 1]);
+            if (!(k % 2) && !(j % 2)) {
+                newStr += '-';
+            }
+            newStr += str[i];
+        }
+    result.innerText = newStr;
+    });
+    //---------------------------------------Phần 3----:
+    // show.addEventListener('click', () => {
+    //     let str = inputStr.value;
+    //     let newStr = '';
+    //     for (i of str) {
+    //         if (i == ' ') {
+    //             newStr += " ";
+    //             continue;
+    //         }
+    //         let j = i.toLowerCase();
+    //         if (j == i) {
+    //             newStr += i.toUpperCase();
+    //         } else {
+    //             newStr += i.toLowerCase();
+    //         }
+    //     }
+    //     result.innerText = newStr;
+    // });
+    </script>
+
+</html>

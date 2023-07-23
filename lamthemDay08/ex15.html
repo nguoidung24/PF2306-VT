@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <meta charset='utf-8'>
+        <meta name='viewport' content='width=device-width, initial-scale=1'>
+        <link href='https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css' rel='stylesheet'>
+        <title>Page Title</title>
+    </head>
+
+    <body class='bg-dark text-light'>
+        <div class="container">
+            <div class="row mt-1">
+                <div class="col">
+                    <div class="form-floating">
+                        <input type="text" value="Programming is fun" placeholder=" " class="form-control" id="inputString">
+                        <label>Nhập chuỗi:</label>
+                    </div>
+                </div>
+                <div class="col">
+                    <button id="hienThi" class="btn btn-success h-100">Hiển Thị</button>
+                </div>
+            </div>
+        </div>
+    </body>
+    <script type="text/javascript">
+    let inputString = document.getElementById('inputString');
+    let hienThi = document.getElementById('hienThi');
+    hienThi.addEventListener('click', () => {
+        let str = inputString.value;
+        let soNguyenAm = 0,
+            soPhuAm = 0;
+        for (i in str) {
+            if (str[i] == ' ') continue;
+            switch (str[i]) {
+                case 'a':
+                case 'e':
+                case 'i':
+                case 'o':
+                case 'u':
+                    soNguyenAm++;
+                    break;
+                default:
+                    soPhuAm++;
+                    break;
+            }
+        }
+        console.log(`Phụ âm: ${soPhuAm} | Nguyen Âm: ${soNguyenAm}`);
+    });
+    </script>
+
+</html>

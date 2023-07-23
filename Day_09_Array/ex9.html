@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <meta charset='utf-8'>
+        <meta name='viewport' content='width=device-width, initial-scale=1'>
+        <link href='https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css' rel='stylesheet'>
+        <title>Page Title</title>
+    </head>
+
+    <body class='bg-dark text-light'>
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <h4>Type Anthing Slowly</h4>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <div class="form-floating text-dark">
+                        <textarea class="form-control" placeholder=" " id="textArea" style="height: 100px"></textarea>
+                        <label for="textArea">Nhập văn bản:</label>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+    <script type="text/javascript">
+    let textArea = document.getElementById('textArea');
+    let n = 0;
+    textArea.addEventListener('keyup', () => {
+        let arr = ['Tôi', 'là', 'đồ', 'Ngôk !!'];
+        n = (n < arr.length) ? n + 1 : 0;
+        textArea.value = '';
+        for (let i = 0; i < n; i++) {
+            textArea.value += `${arr[i]} `;
+        }
+    });
+    </script>
+
+</html>

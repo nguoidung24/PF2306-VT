@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <meta charset='utf-8'>
+        <meta name='viewport' content='width=device-width, initial-scale=1'>
+        <link href='https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css' rel='stylesheet'>
+        <title>Page Title</title>
+        <style type="text/css">
+        p {
+            list-style-type: none;
+            color: cyan;
+            white-space: pre-wrap;
+            font-family: monospace;
+            letter-spacing: 10px;
+        }
+        </style>
+    </head>
+
+    <body class='bg-dark text-light'>
+        <div class="container">
+            <div class="row mt-1">
+                <div class="col">
+                    <div class="form-floating">
+                        <input type="text" id="inputNumber" class="form-control" placeholder="" value="4">
+                        <label>Nhập một số:</label>
+                    </div>
+                </div>
+                <div class="col">
+                    <button id="hienThi" class="btn btn-success h-100">Hiển Thị</button>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <p id="result"></p>
+                </div>
+            </div>
+        </div>
+    </body>
+    <script type="text/javascript">
+    let inputNumber = document.getElementById('inputNumber');
+    let hienThi = document.getElementById('hienThi');
+    let result = document.getElementById('result');
+    hienThi.addEventListener('click', () => {
+        let a = 10;
+        for (let i = 1; i <= a; i++) {
+            for (let k = 7; k > i; k--) {
+                result.innerText += ' ';
+            }
+            for (let j = i; j > 0; j--) {
+                result.innerText += j;
+            }
+            for (let h = 2; h <= i; h++) {
+                result.innerText += h;
+            }
+            result.innerText += '\n';
+        }
+    });
+    </script>
+
+</html>

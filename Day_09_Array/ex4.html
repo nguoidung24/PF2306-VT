@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <meta charset='utf-8'>
+        <meta name='viewport' content='width=device-width, initial-scale=1'>
+        <link href='https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css' rel='stylesheet'>
+        <style type="text/css">
+        #labelArr {
+            text-align: justify;
+            letter-spacing: 1px;
+        }
+        </style>
+        <title>Page Title</title>
+    </head>
+
+    <body class='bg-dark text-light'>
+        <div class="container">
+            <div class="row mt-1">
+                <div class="col">
+                    <label class="text-warning" id="labelArr"></label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col text-center">
+                    <button class="btn btn-outline-success" id="buttonShow">Tìm min - max</button>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <p class="text-success" id="result">
+                    </p>
+                </div>
+            </div>
+        </div>
+    </body>
+    <script type="text/javascript">
+    let labelArr = document.getElementById('labelArr');
+    let result = document.getElementById('result');
+    let buttonShow = document.getElementById('buttonShow');
+
+    function arr() {
+        let numbers = [];
+        while (numbers.length < 99) {
+            let num = Math.floor(Math.random() * 1000) + 1;
+            if (!numbers.includes(num)) {
+                numbers.push(num);
+            }
+        }
+        return numbers
+    }
+    let numbers = arr();
+    labelArr.innerText = numbers.join(', ');
+    buttonShow.addEventListener('click', () => {
+        let max = numbers[0];
+        let min = numbers[0];
+        for (i of numbers) {
+            if (max < i) max = i;
+            if (min > i) min = i;
+        }
+        result.innerText = `Max = ${max}, Min = ${min}`;
+
+    });
+    </script>
+
+</html>

@@ -28,10 +28,10 @@
     let btnXem = document.getElementById("btnXem");
     let result = document.getElementById("result");
     btnXem.addEventListener('click', () => {
-        let kq = "0";
+        let kq = "";
         num = Number(ipNum.value);
         if (num > 1) {
-            let fi = [0, 1];
+            let fi = [1, 1];
             for (var i = 2; i < num; i++) {
                 fi[i] = fi[i - 1] + fi[i - 2];
             }

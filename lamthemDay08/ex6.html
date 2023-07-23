@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <meta charset='utf-8'>
+        <meta name='viewport' content='width=device-width, initial-scale=1'>
+        <link href='https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css' rel='stylesheet'>
+        <title>Page Title</title>
+    </head>
+
+    <body class='bg-dark text-light'>
+        <div class="container">
+            <div class="row mt-2">
+                <div class="col">
+                    <div class="form-floating">
+                        <input type="number" value="120" placeholder=" " class="form-control" id="ipNum">
+                        <label>Nhập một số</label>
+                    </div>
+                </div>
+                <div class="col">
+                    <button id="btnXem" class="btn btn-success h-100">Xem</button>
+                </div>
+            </div>
+        </div>
+    </body>
+    <script type="text/javascript">
+    let ipNum = document.getElementById('ipNum');
+    let btnXem = document.getElementById('btnXem');
+
+    function thuaSo(n) {
+        let arr = [],
+        	d = 2,index = 0;
+        while (d * d <= n) {
+            while (n % d === 0) {
+                arr[index]=d;
+                n /= d;
+                d=2;
+                index++;
+            }
+            d++;
+        }
+        if (n > 1) {
+            arr[index] = n;
+            index++;
+        }
+        return arr;
+    }
+    btnXem.addEventListener('click', function() {
+        let arr = thuaSo(Number(ipNum.value));
+        console.log(`${arr}`);
+    });
+    </script>
+
+</html>

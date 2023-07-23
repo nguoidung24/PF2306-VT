@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <meta charset='utf-8'>
+        <meta name='viewport' content='width=device-width, initial-scale=1'>
+        <link href='https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css' rel='stylesheet'>
+        <style type="text/css">
+        tr td {
+            width: 30px;
+            height: 30px;
+            white-space: pre-wrap;
+        }
+
+        tr td:hover {
+            cursor: pointer;
+            background-color: #63636363;
+        }
+        </style>
+        <title>Page Title</title>
+    </head>
+
+    <body class='bg-dark text-light'>
+        <div class="container">
+            <div class="row">
+                <div class="col text-center">
+                    <h3>Caro Game Simple</h3>
+                </div>
+            </div>
+            <div class="row">
+                <div class="table-responsive ">
+                    <table class="table-dark table-bordered border-warning text-center d-flex justify-content-center">
+                        <tbody id="tableShow">
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="row text-center mt-3">
+                <div class="col">
+                    <button id="changeValue" class="btn btn-outline-success">Change Value</button>
+                </div>
+            </div>
+        </div>
+    </body>
+    <script type="text/javascript">
+    let tableShow = document.getElementById('tableShow');
+
+    function arr() {
+        let arr = [];
+        for (let i = 0; i < 5; i++) {
+            arr[i] = [];
+            for (let j = 0; j < 5; j++) {
+                arr[i][j] = '';
+            }
+        }
+        return arr;
+    }
+    let a = arr();
+    show(a);
+
+    function show(arr) {
+        tableShow.innerHTML = '';
+        for (let i = 0; i < arr.length; i++) {
+            tableShow.innerHTML += `<tr>`;
+            for (let j = 0; j < arr[i].length; j++) {
+                tableShow.childNodes[i].innerHTML += `<td id='${j}' class='${i}' onclick='changeV(this)'>${arr[i][j]}</td>`;
+            }
+            tableShow.innerHTML += '</tr>';
+        }
+    }
+
+    let luot = true;
+
+    function changeV(i) {
+        let row = i.className;
+        let col = i.id;
+        if (!(a[row][col])) {
+            let x = (luot) ? 'X' : '0';
+            luot = (luot) ? false : true;
+            a[row][col] = x;
+            show(a);
+        }
+
+    }
+    // let changeValue = document.getElementById('changeValue');
+    // changeValue.addEventListener('click', () => {
+    //     let row = Number(prompt('Nhập tọa độ x'));
+    //     let col = Number(prompt('Nhập tọa độ y'));
+    //     a[row][col] = 'x';
+    //     show(a);
+    // });
+    </script>
+
+</html>

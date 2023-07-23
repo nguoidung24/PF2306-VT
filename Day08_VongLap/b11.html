@@ -38,8 +38,8 @@
             return tong; 
         }
         document.getElementById('btnXem').addEventListener('click', ()=>{
-            let max = ipNum[0].value;
-            let min = ipNum[1].value;
+            let max = Number(ipNum[0].value);
+            let min = Number(ipNum[1].value);
             let tong = (max>=min)?numSum(max,min):numSum(min,max);
             document.getElementById('result').innerText = `Sum: ${tong}`;
         });

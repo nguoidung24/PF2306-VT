@@ -12,7 +12,7 @@
         <div class="container">
             <div class="row mt-2">
                 <div class="col">
-                    <input type="number" class="bg-dark text-light form-control" id="ipNum">
+                    <input type="number" class="bg-dark text-light form-control" id="inputNumber">
                 </div>
                 <div class="col">
                     <input class="btn btn-success" type="button" value="OK" id="btnOK">
@@ -26,16 +26,22 @@
         </div>
     </body>
     <script type="text/javascript">
-    let ipNum = document.getElementById('ipNum');
+    let inputNumber = document.getElementById('inputNumber');
     let result = document.getElementById('result');
     let btnOK = document.getElementById('btnOK');
     btnOK.addEventListener('click', () => {
-        let kq = '';
-        let arr = ipNum.value.split("");
-        for (var i = (arr.length - 1); i >= 0; i--) {
-            kq += arr[i];
+        let ket_qua = '';
+        let a = inputNumber.value;
+        // let arr = inputNumber.value.split("");
+        // for (let i = (arr.length - 1); i >= 0; i--) {
+        //     ket_qua += arr[i];
+        // }
+        while(true){
+            ket_qua += a%10;
+            a = Math.floor(a/10);
+            if(a == 0) break;
         }
-        result.innerText = kq;
+        result.innerText = ket_qua;
     });
     </script>
 
