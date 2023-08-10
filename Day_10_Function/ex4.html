@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <meta charset='utf-8'>
+        <meta name='viewport' content='width=device-width, initial-scale=1'>
+        <link href='https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css' rel='stylesheet'>
+        <title>Page Title</title>
+    </head>
+
+    <body class='bg-dark text-light'>
+    </body>
+    <script type="text/javascript">
+    function footToMeter(foot) {
+        return 0.305 * foot;
+    }
+
+    function meterToFoot(meter) {
+        return 3.279 * meter;
+    }
+    for (let i = 1; i < 11; i++) {
+        console.log(footToMeter(i));
+    }
+    console.log('---------------------');
+    for (let i = 20; i <= 65; i += 5) {
+        console.log(meterToFoot(i));
+    }
+    </script>
+
+</html>

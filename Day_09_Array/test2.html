@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <meta charset='utf-8'>
+        <meta name='viewport' content='width=device-width, initial-scale=1'>
+        <link href='https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css' rel='stylesheet'>
+        <title>Page Title</title>
+    </head>
+
+    <body class='bg-dark text-light'>
+    </body>
+    <script type="text/javascript">
+    	let numbersArr = [0,1,2,3,0,4,5,6,7,8,9];
+    	let newArr_1 = [];
+    	let newArr_2 = [];
+    	for(i of numbersArr){
+    		if(i == 0) continue;
+			if(!(i%2)){
+				newArr_1.push(i);
+			} else{
+				newArr_2.push(i);
+			}	
+    	}
+    	// newArr_1.push(0);
+    	for(i of numbersArr){
+    		if(i == 0)
+    			newArr_1.push(i);
+    	}
+    	newArr = newArr_1.concat(newArr_2);
+    	console.log(newArr);
+
+    </script>
+
+</html>

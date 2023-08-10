@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <meta charset='utf-8'>
+        <meta name='viewport' content='width=device-width, initial-scale=1'>
+        <link href='../CSS/bootstrapSolar.css' rel='stylesheet'>
+        <title>Page Title</title>
+    </head>
+
+    <body>
+        <div class="container">
+            <div class="row mt-1 bg-dark pt-3 pb-3 rounded-3">
+                <div class="col-9">
+                    <input id="san_pham" type="text" placeholder="Thêm sản phẩm" class="form-control">
+                </div>
+                <div class="col-3">
+                    <button class="w-100 btn btn-outline-success" id="buttonAdd">Thêm</button>
+                </div>
+            </div>
+            <div class="row mt-3">
+                <div class="col">
+                    <p class="h5">Tất cả sản phẩm</p>
+                </div>
+                <div class="col d-flex justify-content-end">
+                    <p id="total"></p>
+                    <p>&nbsp;Sản phẩm</p>
+                </div>
+            </div>
+            <div class="row mt-1 pt-2">
+                <div class="col p-0">
+                    <table class="table table-bordered border-secondary table-striped ">
+                        <thead class="text-center">
+                            <tr>
+                                <th class="w-75">Sản phẩm</th>
+                                <th colspan="2">Chức năng</th>
+                            </tr>
+                        </thead>
+                        <tbody class="text-center" id="tableShow">
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </body>
+    <script type="text/javascript">
+    let tableShow = document.getElementById('tableShow');
+    let san_pham = document.getElementById('san_pham');
+    let buttonAdd = document.getElementById('buttonAdd');
+    let total = document.getElementById('total');
+    let danhSach = ["Nokia 1280", "Iphone 1280", "SamSung 1280", "Oppo 1280", "Dell 1280", "HP 1280", "MacBook 1280", "Asus 1280", "Lenovo 1280"];
+
+    buttonAdd.addEventListener('click', () => {
+        danhSach.push(san_pham.value);
+        main();
+    });
+
+    function getTableHTML(name, index) {
+        return `<tr><td>${name}</td><td><button id="update_${index}" class="btn btn-outline-primary">Sửa</button></td><td><button id="delete_${index}" class="btn btn-outline-warning">Xóa</button></td></tr>`;
+    }
+
+    function displayTable(arr) {
+        total.innerText = arr.length;
+        tableShow.innerHTML = ``;
+        for (i in arr) {
+            tableShow.innerHTML += getTableHTML(arr[i], i);
+        }
+    }
+
+    function main() {
+        displayTable(danhSach);
+        for (let i in danhSach) {
+            document.getElementById('update_' + i)
+                .addEventListener('click', () => {
+                    danhSach[i] = prompt('Tên sản phẩm', danhSach[i]) ?? danhSach[i];
+                    main();
+
+                });
+            document.getElementById('delete_' + i)
+                .addEventListener('click', () => {
+                    if (confirm(`Có muốn xóa ${danhSach[i]}`)) {
+                        danhSach.splice(i, 1);
+                        main();
+                    }
+                });
+        }
+    }
+    main();
+    </script>
+
+</html>

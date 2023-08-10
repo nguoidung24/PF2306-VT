@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <meta charset='utf-8'>
+        <meta name='viewport' content='width=device-width, initial-scale=1'>
+        <link href='https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css' rel='stylesheet'>
+        <title>Page Title</title>
+    </head>
+
+    <body class='bg-dark text-light'>
+    </body>
+    <script type="text/javascript">
+    let arr1 = [3, 5, 1, 8, -3, 7, 8];
+    let arr2 = [7, 12, 6, 9, 20, 56, 89];
+    let arr3 = [];
+    let arr4 = [0, 0, 0, 0, 0, 0];
+
+    function minArray(arr) {
+    	if(arr.length == 0) return -1;
+        let min = arr[0];
+        for (i of arr) {
+            if (min > i) min = i;
+        }
+        return min;
+    }
+    console.log(`Min = ${minArray(arr1)}`);
+    console.log(`Min = ${minArray(arr2)}`);
+    console.log(`Min = ${minArray(arr3)}`);
+    console.log(`Min = ${minArray(arr4)}`);
+    </script>
+
+</html>

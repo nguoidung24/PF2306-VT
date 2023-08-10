@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <meta charset='utf-8'>
+        <meta name='viewport' content='width=device-width, initial-scale=1'>
+        <link href='https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css' rel='stylesheet'>
+        <title>Page Title</title>
+    </head>
+
+    <body class='bg-dark text-light'>
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <h5>Temperature Converter</h5>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <p>Chuyển độ F sang độ C</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <div class="form-floating text-dark">
+                        <input id="inputF" type="number" placeholder=" " class="form-control">
+                        <label>Nhập độ F:</label>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <p id="result"></p>
+                </div>
+            </div>
+        </div>
+    </body>
+    <script type="text/javascript">
+    let inputF = document.getElementById('inputF');
+
+    function chuyenDoi(f) {
+        return (f - 32) * 5 / 9;
+    }
+    inputF.addEventListener('keyup', () => {
+        let f = Number(inputF.value);
+        document.getElementById('result').innerText = `Celcius: ${chuyenDoi(f)}`;
+    });
+    </script>
+
+</html>
