@@ -1,0 +1,50 @@
+static: gọi không cần tạo new;
+privire: chỉ mình nó dùng - tính bao đóng;
+Tất cả các phương thức trong đối tượng `string` của C#:
+
+1. `Compare(string, string)`: so sánh hai chuỗi và trả về một giá trị nguyên dương, âm hoặc bằng 0 tùy thuộc vào thứ tự của hai chuỗi.
+2. `Compare(string, string, bool)`: so sánh hai chuỗi và trả về một giá trị nguyên dương, âm hoặc bằng 0 tùy thuộc vào thứ tự của hai chuỗi. Tham số thứ ba xác định xem phân biệt chữ hoa chữ thường trong quá trình so sánh hay không.
+3. `Compare(string, int, string, int, int)`: so sánh một phần của chuỗi đã cho với một phần của chuỗi khác và trả về một giá trị nguyên dương, âm hoặc bằng 0 tùy thuộc vào thứ tự của hai phần chuỗi.
+4. `CompareOrdinal(string, string)`: so sánh hai chuỗi và trả về một giá trị nguyên dương, âm hoặc bằng 0 tùy thuộc vào thứ tự của các ký tự trong hai chuỗi.
+5. `Concat(string, string)`: kết hợp hai chuỗi thành một chuỗi mới.
+6. `Concat(string, string, string)`: kết hợp ba chuỗi thành một chuỗi mới.
+7. `Concat(string, string, string, string)`: kết hợp bốn chuỗi thành một chuỗi mới.
+8. `Contains(string)`: xác định xem chuỗi đã cho có chứa chuỗi con đã cho hay không.
+9. `Copy(string)`: tạo một bản sao của chuỗi đã cho.
+10. `EndsWith(string)`: xác định xem chuỗi đã cho có kết thúc bằng chuỗi con đã cho hay không.
+11. `Equals(object)`: xác định xem đối tượng đã cho có phải là chuỗi và có giống với chuỗi đã cho hay không.
+12. `Equals(string)`: xác định xem chuỗi đã cho có giống với chuỗi đã cho hay không.
+13. `Format(string, object)`: định dạng chuỗi theo một chuỗi định dạng và tham số đã cho.
+14. `Format(string, object, object)`: định dạng chuỗi theo một chuỗi định dạng và hai tham số đã cho.
+15. `Format(string, object[])`: định dạng chuỗi theo một chuỗi định dạng và một mảng các tham số đã cho.
+16. `GetEnumerator()`: trả về một trình vòng lặp cho chuỗi đã cho.
+17. `GetHashCode()`: trả về mã băm của chuỗi đã cho.
+18. `GetHashCode(StringComparison)`: trả về mã băm của chuỗi đã cho, với lựa chọn phân biệt chữ hoa chữ thường.
+19. `GetType()`: trả về kiểu đối tượng của chuỗi đã cho.
+20. `GetTypeCode()`: trả về kiểu dữ liệu của chuỗi đã cho.
+21. `IndexOf(char)`: trả về vị trí đầu tiên của một ký tự trong chuỗi đã cho.
+22. `IndexOf(char, int)`: trả về vị trí đầu tiên của một ký tự trong chuỗi đã cho, bắt đầu từ vị trí đã cho.
+23. `IndexOf(string)`: trả về vị trí đầu tiên của một chuỗi con trong chuỗi đã cho.
+24. `IndexOf(string, int)`: trả về vị trí đầu tiên của một chuỗi con trong chuỗi đã cho, bắt đầu từ vị trí đã cho.
+25. `IndexOf(string, int, int)`: trả về vị trí đầu tiên của một chuỗi con trong chuỗi đã cho, bắt đầu từ vị trí đã cho25. `IndexOf(string, int, int)`: trả về vị trí đầu tiên của một chuỗi con trong chuỗi đã cho, bắt đầu từ vị trí đã cho và có độ dài được chỉ định.
+26. `IndexOfAny(char[])`: trả về vị trí đầu tiên của bất kỳ ký tự nào trong một mảng các ký tự đã cho trong chuỗi đã cho.
+27. `IndexOfAny(char[], int)`: trả về vị trí đầu tiên của bất kỳ ký tự nào trong một mảng các ký tự đã cho trong chuỗi đã cho, bắt đầu từ vị trí đã cho.
+28. `Insert(int, string)`: chèn một chuỗi con vào chuỗi đã cho tại vị trí đã cho.
+29. `Intern()`: lưu trữ chuỗi đã cho trong bộ nhớ được quản lý và trả về một tham chiếu đến chuỗi đó.
+30. `IsInterned(string)`: trả về tham chiếu đến chuỗi đã cho trong bộ nhớ được quản lý, nếu nó đã được lưu trữ trước đó bằng cách sử dụng phương thức `Intern`.
+31. `IsNormalized()`: xác định xem chuỗi đã cho có được chuẩn hóa Unicode hay không.
+32. `IsNullOrEmpty(string)`: xác định xem chuỗi đã cho có là `null` hoặc rỗng hay không.
+33. `IsNullOrWhiteSpace(string)`: xác định xem chuỗi đã cho có là `null`, rỗng hoặc chỉ chứa khoảng trắng hay không.
+34. `Join(string, string[])`: kết hợp một mảng các chuỗi thành một chuỗi mới, sử dụng một chuỗi phân cách được chỉ định.
+35. `Join(string, object[])`: kết hợp một mảng các đối tượng thành một chuỗi mới, sử dụng một chuỗi phân cách được chỉ định.
+36. `Join<T>(string, IEnumerable<T>)`: kết hợp một tập hợp các đối tượng kiểu `T` thành một chuỗi mới, sử dụng một chuỗi phân cách được chỉ định.
+37. `LastIndexOf(char)`: trả về vị trí cuối cùng của một ký tự trong chuỗi đã cho.
+38. `LastIndexOf(char, int)`: trả về vị trí cuối cùng của một ký tự trong chuỗi đã cho, kết thúc tại vị trí đã cho.
+39. `LastIndexOf(string)`: trả về vị trí cuối cùng của một chuỗi con trong chuỗi đã cho.
+40. `LastIndexOf(string, int)`: trả về vị trí cuối cùng của một chuỗi con trong chuỗi đã cho, kết thúc tại vị trí đã cho.
+41. `LastIndexOf(string, int, int)`: trả về vị trí cuối cùng của một chuỗi con trong chuỗi đã cho, kết thúc tại vị trí đã cho và có độ dài được chỉ định.
+42. `LastIndexOfAny(char[])`: trả về vị trí cuối cùng của bất kỳ ký tự nào trong một mảng các ký tự đã cho trong chuỗi đã cho.
+43. `LastIndexOfAny(char[], int)`: trả về vị trí cuối cùng của bất kỳ ký tự nào trong một mảng các ký tự đã cho trong chuỗi đã cho, kết thúc tại vị trí đã cho.
+44. `Normalize()`: chuẩn hóa Unicode của chuỗi đã cho.
+45. `PadLeft(int)`: thêm khoảng trắng vào đầu chuỗi đã cho để đạt được độ dài được chỉ định.
+46. `PadLeft(int, char)`: thêm ký tự được chỉ định vào đầu chuỗi đã cho để đạt được độ dài được

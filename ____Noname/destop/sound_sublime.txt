@@ -1,0 +1,26 @@
+Để cài đặt âm thanh khi gõ phím trong Sublime Text 4, bạn có thể thực hiện các bước sau:
+
+1. Tải và cài đặt plugin "Sublime-KeyPress-Sounds" bằng cách truy cập vào trang web https://packagecontrol.io/packages/Sublime-KeyPress-Sounds hoặc sử dụng công cụ quản lý gói (Package Control) trong Sublime Text 4 để cài đặt.
+
+2. Sau khi cài đặt xong, hãy mở file cấu hình của plugin bằng cách chọn Preferences > Package Settings > KeyPress Sounds > Settings. Nếu bạn muốn chỉnh sửa cấu hình mặc định của plugin, hãy chọn Preferences > Package Settings > KeyPress Sounds > Default.
+
+3. Trong file cấu hình, bạn có thể thay đổi các giá trị của các thuộc tính để tùy chỉnh âm thanh khi gõ phím. Ví dụ:
+
+- "sound_on": true (hoặc false) để bật (hoặc tắt) âm thanh khi gõ phím.
+- "sound_file": "Keypress.aiff" để chọn file âm thanh mặc định. Bạn có thể thay đổi tên file và đường dẫn đến file âm thanh của riêng bạn.
+- "volume": 1.0 để chỉnh âm lượng của âm thanh. Giá trị 1.0 tương đương với âm lượng tối đa.
+
+4. Sau khi tùy chỉnh xong, hãy lưu file cấu hình và khởi động lại Sublime Text 4.
+
+Bây giờ, khi bạn gõ phím trong Sublime Text 4, âm thanh tương ứng sẽ được phát ra.
+---------------------------------------
+Hiện nay, có nhiều plugin hỗ trợ Bootstrap cho Sublime Text 4. Dưới đây là một số plugin phổ biến:
+
+1. Bootstrap 4 Autocomplete: Plugin này cung cấp tính năng tự động hoàn thành các lớp, phần tử và thuộc tính Bootstrap 4. Nó giúp bạn tăng tốc độ viết mã và giảm thiểu các lỗi cú pháp.
+
+2. Bootstrap 4 Snippets: Plugin này cung cấp một bộ sưu tập các snippets Bootstrap 4 để bạn có thể nhanh chóng chèn các khối mã Bootstrap vào trang web của mình.
+
+3. Emmet: Plugin này không phải là một plugin riêng cho Bootstrap, nhưng nó cung cấp các snippet và tính năng tự động hoàn thành cho HTML, CSS và JavaScript, giúp bạn tăng tốc độ viết mã.
+
+
+Ngoài ra, còn nhiều plugin khác cho Sublime Text 4 hỗ trợ Bootstrap, bạn có thể tìm thấy chúng trên trang chủ của Sublime Text hoặc trên các trang web tải plugin của bên thứ ba.
