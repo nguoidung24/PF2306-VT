@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <meta charset='utf-8'>
+        <meta name='viewport' content='width=device-width, initial-scale=1'>
+        <link href='https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css' rel='stylesheet'>
+        <title>Page Title</title>
+    </head>
+
+    <body class='bg-dark text-light'>
+    </body>
+    <script type="text/javascript">
+    class Battery {
+
+        constructor() {
+            this.energy = 0;
+        }
+
+        setEnergy(energy) {
+            this.energy = energy;
+        };
+
+        getEnergy() {
+            return this.energy;
+        };
+
+        decreaseEnergy() {
+            if (this.energy > 0) {
+                this.energy-=1;
+            }
+        }
+
+    };
+    class FlashLamp {
+
+        constructor() {}
+
+        setBattery(battery) {
+            this.battery = battery;
+        };
+
+        getBatteryInfo() {
+            return this.battery.getEnergy();
+        };
+
+        light() {
+            if (this.status) {
+                alert("Lighting");
+
+            } else {
+                alert("Not lighting");
+            }
+        };
+
+        turnOn() {
+            this.status = true;
+        };
+
+        turnOff() {
+            this.status = false;
+        }
+    };
+    let battery = new Battery();
+    battery.setEnergy(10);
+
+    let flashLamp = new FlashLamp();
+    flashLamp.setBattery(battery);
+
+    document.write("Battery info:" + flashLamp.getBatteryInfo() + "<br/>");
+    flashLamp.light();
+
+    document.write("Turn on<br/>")
+    flashLamp.turnOn();
+    flashLamp.light();
+    document.write("Battery info:" + flashLamp.getBatteryInfo() + "<br/>");
+
+    document.write("Turn off<br/>")
+    flashLamp.turnOff();
+    flashLamp.light();
+    </script>
+
+</html>

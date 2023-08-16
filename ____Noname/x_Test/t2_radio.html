@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <meta charset='utf-8'>
+        <meta name='viewport' content='width=device-width, initial-scale=1'>
+        <link href='https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css' rel='stylesheet'>
+        <title>Test radio</title>
+    </head>
+
+    <body>
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <input value="raCheck1" type="radio" name="raCheck" id="raCheck1">
+                    <label for="raCheck1">raCheck1</label>
+                </div>
+                <div class="col-12">
+                    <input value="raCheck2" type="radio" name="raCheck" id="raCheck2">
+                    <label for="raCheck2">raCheck2</label>
+                </div>
+                <div class="col-12">
+                    <input value="raCheck3" type="radio" name="raCheck" id="raCheck3">
+                    <label for="raCheck3">raCheck3</label>
+                </div>
+                <div class="col-12">
+                    <input value="raCheck4" type="radio" name="raCheck" id="raCheck4">
+                    <label for="raCheck4">raCheck4</label>
+                </div>
+            </div>
+            <div class="row">
+                <button class="btn btn-success" id="kiemtra">Kiem Tra</button>
+            </div>
+        </div>
+    </body>
+    <script type="text/javascript">
+    let ck = document.getElementsByName('raCheck');
+    let kiemtra = document.getElementById('kiemtra');
+
+    kiemtra.addEventListener('click', () => {
+        if (ck[2].checked) {
+            return alert("ok");
+        }
+        return alert('sai');
+    });
+    // const radioInputs = document.querySelectorAll('input[type="radio"]');
+    </script>
+
+</html>

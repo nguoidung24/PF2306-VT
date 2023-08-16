@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <meta charset='utf-8'>
+        <meta name='viewport' content='width=device-width, initial-scale=1'>
+        <link rel="stylesheet" type="text/css" href="style/css.css">
+        <title>Page Title</title>
+        <style type="text/css">
+        #canvas {
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: -99;
+        }
+        </style>
+    </head>
+
+    <body>
+        <canvas id="canvas"></canvas>
+    </body>
+    <script>
+    function drawCircle(context, maxWidth, maxHeight, x, y, radius, count) {
+        this.count = count;
+        this.context = context;
+        this.spin = 3;
+        this.radius = radius;
+        this.x = x;
+        this.y = y;
+
+        this.createCircle = function() {
+            if (this.count > 20) return;
+
+            this.context.beginPath();
+            this.context.arc(this.x, this.y, this.radius, 0, 2 * Math.PI);
+            this.context.fillStyle = 'black';
+            this.context.fill();
+            this.context.closePath();
+        };
+
+        this.moveCircle = function() {
+            this.createCircle();
+            this.y += this.spin;
+            if (this.y >= maxHeight - this.radius || this.y <= this.radius) {
+                this.spin = -this.spin;
+            }
+
+            requestAnimationFrame(() => {
+                this.moveCircle();
+            });
+        };
+    }
+
+    let canvas = document.getElementById('canvas');
+    let count = 1;
+
+    function main() {
+        console.log(';');
+        let context = canvas.getContext('2d');
+        canvas.width = innerWidth;
+        canvas.height = innerHeight;
+        let radius = Math.floor(Math.random() * 50 + 10);
+        let x = Math.floor(Math.random() * (canvas.width - radius * 2)) + radius;
+        let y = Math.floor(Math.random() * (canvas.height - radius * 2)) + radius;
+        new drawCircle(context, canvas.width, canvas.height, x, y, radius, count++).moveCircle();
+    }
+
+
+    setInterval(main, 10);
+    </script>
+
+</html>
